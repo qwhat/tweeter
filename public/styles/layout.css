@@ -31,9 +31,3 @@ main {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
-.clearfix::after {
-  display: block;
-  content:"";
-  overflow: auto;
-  clear:both;
-}

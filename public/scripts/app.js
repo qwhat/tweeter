@@ -1,9 +1,3 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
- // Test / driver code (temporary). Eventually will get this from the server.
 $(document).ready( function (){
   const rootURL = "http://localhost:8080";
 
@@ -13,25 +7,35 @@ $(document).ready( function (){
     for (tweet of tweets) {
       const tweeterPost = createTweetElement(tweet);
       $("#tweets-container").prepend(tweeterPost);
-    }
+    };
+  };
+
+  const loadTweets = () => {
+    const tweetLog =
+    $.ajax("/tweets", {
+      method: "GET",
+      dataType: "json",
+    }).then(function(data) {
+    renderTweets(data)
+    })
   };
 
   function createTweetElement (tweet) {
-    var avatar = tweet.user.avatars.regular;
-    var userName = tweet.user.name;
-    var handle = tweet.user.handle;
-    var textPost = tweet.content.text;
-    var timeStamp = tweet.created_at + " days ago";
-
+    const avatar = tweet.user.avatars.regular;
+    const userName = tweet.user.name;
+    const handle = tweet.user.handle;
+    const textPost = tweet.content.text;
+    const timeStamp = tweet.created_at;
+    const timeAgo = moment(timeStamp).fromNow();
     const $tweet = $("<article>").addClass("tweet");
-    const header = $("<header>").addClass("clearfix");
+    const header = $("<header>");
     $("<img>").addClass("profile-pic").attr("src", avatar).appendTo(header);
     $("<h2>").addClass("name").text(userName).appendTo(header);
     $("<span>").addClass("handle").text(handle).appendTo(header);
     $tweet.append(header);
     const message = $("<p>").text(textPost);
     $tweet.append(message);
-    const foot = $("<footer>").text(timeStamp);
+    const foot = $("<footer>").text(timeAgo);
     $tweet.append(foot);
     return $tweet;
   };
@@ -60,18 +64,7 @@ $(document).ready( function (){
         $(".counter").text(140)
       })
     }
-  })
-
-  const loadTweets = () => {
-    const tweetLog =
-    $.ajax("/tweets", {
-      method: "GET",
-      dataType: "json",
-    }).then(function(data) {
-    renderTweets(data)
-    })
-  }
-  loadTweets()
+  });
 
   $("#miyagi").click(function(){
     if ($("#miyagi").hasClass("composing")) {
@@ -83,5 +76,5 @@ $(document).ready( function (){
     $(".new-tweet textarea").focus();
   });
 
-
+  loadTweets();
 });

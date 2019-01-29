@@ -1,4 +1,4 @@
-nav {
+#nav-bar {
   position: fixed;
   width: 100%;
   background-color: #00a087;
@@ -23,7 +23,7 @@ nav {
   font-size:200%;
   line-height: 80px;
 }
-#nav-bar #miyagi{
+#nav-bar #miyagi{ /* css for compose button */
   font-size:30px;
   float: right;
   border:2px solid #000;
@@ -35,6 +35,6 @@ nav {
   padding-bottom: 10px;
 }
 
-.composing {
+.composing { /* compose text turns green when new-tweet is visible */
   color: #00a087;
 }
