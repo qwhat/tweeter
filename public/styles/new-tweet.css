@@ -1,4 +1,4 @@
-section {
+.new-tweet {
   margin-left: 2em;
   margin-right: 2em;
   margin-bottom: 1em;
@@ -9,7 +9,7 @@ section {
   font-family: 'Roboto Condensed', sans-serif;
 }
 
-section > h2 {
+.new-tweet > h2 {
   margin-top: 0;
 }
 
@@ -18,17 +18,15 @@ section > h2 {
   height:1px;
   background: #000;
 }
-form {
+section > form {
   font-family: 'Roboto Condensed', sans-serif;
 }
-form > textarea {
+section > form > textarea {
   width: 100%;
   padding:8px;
 }
 
-form > input {
-}
-form > span {
+section > form > span {
   float:right;
   padding-right: 8px;
 }
