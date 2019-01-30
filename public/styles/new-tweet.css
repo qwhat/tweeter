@@ -6,7 +6,7 @@
   border: 2px solid #e1e1e1;
   border-radius: 10px ;
   background-color: #eee;
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
 }
 
 .new-tweet > h2 {
@@ -20,7 +20,7 @@
 }
 
 section > form {
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
 }
 
 section > form > textarea {

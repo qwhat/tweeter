@@ -1,10 +1,10 @@
-$(document).ready( function (){
-  const rootURL = "http://localhost:8080";
+$(document).ready( function (){                                                 //executes function once the DOM loads
+  const rootURL = "http://localhost:8080";                                      //defines URL path
 
-  function renderTweets(tweets) {
+  function renderTweets(tweets) {                                               //this function renders the tweets on the page
 
-    $("#tweets-container").empty()
-    for (tweet of tweets) {
+    $("#tweets-container").empty()                                              //empties the tweet-container and reloads it to not have duplicate messages and "refreshes" the page
+    for (tweet of tweets) {                                                     //loops over each tweet passed in argument "tweets"
       const tweeterPost = createTweetElement(tweet);
       $("#tweets-container").prepend(tweeterPost);
     };
