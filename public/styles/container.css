@@ -2,17 +2,15 @@
   margin-left: 2em;
   margin-right: 2em;
   margin-bottom: 1em;
-  height: 100%;
   border: 2px solid rgba(225,225,225,0.7);
   border-radius: 10px ;
-  font-family: "Roboto Condensed", sans-serif;
 }
 
 .tweet:hover {
 border:2px solid rgba(0, 0, 0, 1);
 }
 
-.tweet:hover > header {
+.tweet:hover > header { /* the reason hover is defined strangely is because the requirements want the text to stay completely opaque */
   opacity: 1.0;
 }
 
@@ -26,9 +24,7 @@ border:2px solid rgba(0, 0, 0, 1);
 
 header > .profile-pic {
   width: 60px;
-  height: 60px;
   margin-right: 10px;
-  margin-top: 0;
   border-radius: 10px ;
   float:left;
 }
@@ -41,7 +37,6 @@ header > .profile-pic {
 
 .handle {
   float:right;
-  text-align: start;
 }
 
 .tweet p {
